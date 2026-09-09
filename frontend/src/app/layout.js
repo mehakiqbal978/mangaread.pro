@@ -23,34 +23,9 @@ const InkDots = dynamic(() => import("@/components/InkDots"));
 const AchievementToast = dynamic(() => import("@/components/AchievementToast"));
 const PWAInstall = dynamic(() => import("@/components/PWAInstall"));
 const LibraryPicker = dynamic(() => import("@/components/LibraryPicker"));
-const AAdsBanner = dynamic(() => import("@/components/AAdsBanner"));
 
 const DEFAULT_DESCRIPTION =
   "Read manga, manhwa, and manhua free. Sync reading across devices, bookmark chapters, track progress, and discover new series.";
-
-let adsScript = "";
-try {
-  const fs = require("fs");
-  const path = require("path");
-  const adsPath = path.join(process.cwd(), "public", "ads.js");
-  const adsTxtPath = path.join(process.cwd(), "ads.txt");
-  
-  let adsContent = "";
-  try {
-    adsContent = fs.readFileSync(adsPath, "utf8");
-  } catch {
-    try {
-      adsContent = fs.readFileSync(adsTxtPath, "utf8");
-    } catch {}
-  }
-  
-  const matches = [...adsContent.matchAll(/<script[^>]*>([\s\S]*?)<\/script>/gi)];
-  if (matches.length) {
-    adsScript = matches[matches.length - 1][1].trim();
-  }
-} catch (e) {
-  console.error("Failed to load ads:", e);
-}
 
 export const metadata = {
   metadataBase: new URL(SITE_URL),
@@ -119,11 +94,7 @@ export default async function RootLayout({ children }) {
         <meta name="6a97888e-site-verification" content="96070b758f3aa1bd8cc49f6ef180d595" />
         <meta name="7A3B9K2" content="7A3B9K2" />
         <meta name="yandex-verification" content="c8df678ff951f19e" />
-        <meta name="e0f19b24e15dad77283ca491bc40b2333383dd0e" content="e0f19b24e15dad77283ca491bc40b2333383dd0e" />
-        <meta name="popads-verification-3664867" value="557f27c1e5809a5da647c2f8f236ef13" />
-        <meta name="referrer" content="no-referrer-when-downgrade" />
         <meta name="admaven-placement" content="BpdY8rjsF" />
-        {adsScript && <script dangerouslySetInnerHTML={{ __html: adsScript }} />}
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-39V70HQCY8"></script>
         <script
           dangerouslySetInnerHTML={{
@@ -158,7 +129,6 @@ export default async function RootLayout({ children }) {
 <div id="app">
               <InkDots />
               <Header />
-              <AAdsBanner />
               <Sidebar />
               <main>{children}</main>
               <MobileNav />
