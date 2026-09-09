@@ -33,8 +33,8 @@ export default async function Home() {
       await Promise.all([
         fetchHomeSection('popular_now').catch(() => ({ data: [] })),
         fetchHomeSection('readers_also_love').catch(() => ({ data: [] })),
-        withTimeout(getMangaList({ perPage: 16, sort: ["TRENDING_DESC"] }), 8000),
-        withTimeout(getRecentMangaList({ perPage: 5, genre_in: ["Adventure", "Fantasy"], countryOfOrigin: "KR", sort: ["ID_DESC"] }), 8000),
+        withTimeout(getMangaList({ perPage: 16, sort: ["TRENDING_DESC"] }), 8000).catch(() => ({ media: [] })),
+        withTimeout(getRecentMangaList({ perPage: 5, genre_in: ["Adventure", "Fantasy"], countryOfOrigin: "KR", sort: ["ID_DESC"] }), 8000).catch(() => ({ media: [] })),
       ]);
 
     popularNow = popularNowData?.data?.length > 0 ? popularNowData.data : [];
