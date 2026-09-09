@@ -5,7 +5,7 @@ import dynamic from "next/dynamic";
 import { ALL_GENRES, abbr } from "@/data/mockData";
 import { slugify } from "@/utils/slugify";
 import { getMangaList, getRecentMangaList, isExplicitNSFW } from "@/utils/anilist";
-import { proxyImage, fetchHomeSection } from "@/utils/api";
+import { proxyImage } from "@/utils/api";
 import MangaCard from "@/components/MangaCard";
 import HomeGenreFilter from "@/components/HomeGenreFilter";
 import HomeAuthNudge from "@/components/HomeAuthNudge";
@@ -29,16 +29,16 @@ export default async function Home() {
   let recentlyAdded = [];
 
   try {
-    const [popularNowData, readersAlsoLoveData, trendingRes, recentRes] =
+    const [popularNowRes, readersAlsoLoveRes, trendingRes, recentRes] =
       await Promise.all([
-        fetchHomeSection('popular_now').catch(() => ({ data: [] })),
-        fetchHomeSection('readers_also_love').catch(() => ({ data: [] })),
-        withTimeout(getMangaList({ perPage: 16, sort: ["TRENDING_DESC"] }), 8000).catch(() => ({ media: [] })),
-        withTimeout(getRecentMangaList({ perPage: 5, genre_in: ["Adventure", "Fantasy"], countryOfOrigin: "KR", sort: ["ID_DESC"] }), 8000).catch(() => ({ media: [] })),
+        withTimeout(getMangaList({ perPage: 12, genre: "Fantasy", countryOfOrigin: "KR", sort: ["POPULARITY_DESC"] }), 8000),
+        withTimeout(getMangaList({ perPage: 12, sort: ["POPULARITY_DESC"] }), 8000),
+        withTimeout(getMangaList({ perPage: 16, sort: ["TRENDING_DESC"] }), 8000),
+        withTimeout(getRecentMangaList({ perPage: 5, genre_in: ["Adventure", "Fantasy"], countryOfOrigin: "KR", sort: ["ID_DESC"] }), 8000),
       ]);
 
-    popularNow = popularNowData?.data?.length > 0 ? popularNowData.data : [];
-    popularOverall = readersAlsoLoveData?.data?.length > 0 ? readersAlsoLoveData.data : [];
+    popularNow = popularNowRes?.media?.length > 0 ? popularNowRes.media : [];
+    popularOverall = readersAlsoLoveRes?.media?.length > 0 ? readersAlsoLoveRes.media : [];
     trending = trendingRes?.media?.length > 0 ? trendingRes.media : [];
     recentlyAdded = recentRes?.media?.length > 0 ? recentRes.media.slice(0, 5) : [];
   } catch {
