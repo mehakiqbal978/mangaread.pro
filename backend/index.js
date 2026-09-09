@@ -540,8 +540,44 @@ app.get('/api/home/sections/:key', rateLimit(60000, 30), async (req, res) => {
       return res.json({ data: cached, cached: true });
     }
     
-    const result = await db.query('SELECT media, updated_at FROM home_sections WHERE section_key = $1', [key]);
-    if (!result.rows.length) return res.status(404).json({ error: 'Section not found' });
+    let result = await db.query('SELECT media, updated_at FROM home_sections WHERE section_key = $1', [key]);
+    
+    if (!result.rows.length) {
+      let query, variables;
+      switch (key) {
+        case 'popular_now':
+          query = ANILIST_MANGA_QUERY;
+          variables = { perPage: 12, genre: 'Fantasy', countryOfOrigin: 'KR', sort: ['POPULARITY_DESC'] };
+          break;
+        case 'readers_also_love':
+          query = ANILIST_MANGA_QUERY;
+          variables = { perPage: 12, sort: ['POPULARITY_DESC'] };
+          break;
+        default:
+          return res.status(404).json({ error: 'Section not found' });
+      }
+      
+      const anilistResult = await anilistClient.callAniList(query, variables);
+      const media = (anilistResult.data?.data?.Page?.media || []).map(mapAnilistMedia);
+      
+      if (media.length === 0) {
+        return res.status(404).json({ error: 'Section not found' });
+      }
+      
+      await db.query(
+        `INSERT INTO home_sections (section_key, media, updated_at) VALUES ($1, $2, CURRENT_TIMESTAMP)
+         ON CONFLICT (section_key) DO UPDATE SET media = EXCLUDED.media, updated_at = CURRENT_TIMESTAMP`,
+        [key, JSON.stringify(media)]
+      );
+      
+      const ttl = isPermanentSection ? cache.TTL.readers_also_love : cache.TTL.anilist_trending;
+      await cache.set(namespace, redisKey, media, ttl);
+      
+      res.setHeader('Cache-Control', isPermanentSection 
+        ? 'public, max-age=31536000, immutable' 
+        : 'public, max-age=3600');
+      return res.json({ data: media, updated_at: new Date().toISOString() });
+    }
     
     const ttl = isPermanentSection ? cache.TTL.readers_also_love : cache.TTL.anilist_trending;
     await cache.set(namespace, redisKey, result.rows[0].media, ttl);

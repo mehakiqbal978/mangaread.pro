@@ -28,6 +28,7 @@ const DEFAULT_DESCRIPTION =
   "Read manga, manhwa, and manhua free. Sync reading across devices, bookmark chapters, track progress, and discover new series.";
 
 let adMavenScript = "";
+let adMavenExternalScripts = "";
 try {
   const fs = require("fs");
   const path = require("path");
@@ -40,6 +41,12 @@ try {
       .map((m) => m[1].trim())
       .filter(Boolean);
     adMavenScript = inlineScripts.join("\n");
+
+    const externalScripts = matches
+      .filter((m) => m[0].includes("src="))
+      .map((m) => m[0].trim())
+      .filter(Boolean);
+    adMavenExternalScripts = externalScripts.join("\n");
   }
 } catch (e) {
   console.error("Failed to load ad-maven:", e);
@@ -122,6 +129,13 @@ export default async function RootLayout({ children }) {
           }}
         />
         {adMavenScript && <script dangerouslySetInnerHTML={{ __html: adMavenScript }} />}
+        {adMavenExternalScripts && (
+          <script
+            async
+            data-cfasync="false"
+            src="//dcbbwymp1bhlf.cloudfront.net/?wbbcd=1717839"
+          />
+        )}
       </head>
       <body className={`${dmSans.className} dark bg-bg`} suppressHydrationWarning>
         <JsonLd data={organizationSchema()} />
