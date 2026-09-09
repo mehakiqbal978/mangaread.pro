@@ -12,7 +12,7 @@ import { env } from "@/lib/env";
 export const SITE_URL = env.NEXT_PUBLIC_SITE_URL.replace(/\/+$/, "");
 
 /** The public-facing site name. */
-export const SITE_NAME = "MangaReader";
+export const SITE_NAME = "MangaRead";
 
 const DEFAULT_DESCRIPTION =
   "Sync reading across devices. Bookmark chapters, track progress, discover new series — without ads.";

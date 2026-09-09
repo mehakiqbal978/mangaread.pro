@@ -14,7 +14,7 @@ const cache = require('./cache');
 
 const ANILIST_URL = 'https://graphql.anilist.co';
 const ANILIST_CLIENT_ID = process.env.ANILIST_CLIENT_ID || '50507';
-const USER_AGENT = `Mangareader.pro/${ANILIST_CLIENT_ID} (+https://www.mangareader.pro)`;
+const USER_AGENT = `mangaread.pro/${ANILIST_CLIENT_ID} (+https://www.mangaread.pro)`;
 
 const ANILIST_HEADERS = {
   'Content-Type': 'application/json',

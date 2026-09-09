@@ -107,7 +107,7 @@ export default function BlogSidebar({ body, relatedBlogs = [] }) {
         <div>
           <div className="blog-sidebar-title">💖 Support Us</div>
           <div style={{ fontSize: '13px', color: 'var(--text2)', lineHeight: 1.5, marginBottom: '12px' }}>
-            We rely on readers like you to keep MangaReader ad-free and lightning fast. 
+            We rely on readers like you to keep MangaRead ad-free and lightning fast. 
           </div>
           <a 
             href="https://www.paypal.com/paypalme/manireader" 

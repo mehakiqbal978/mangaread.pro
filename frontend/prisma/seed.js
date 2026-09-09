@@ -29,11 +29,11 @@ function readingMinutes(body) {
 
 const AUTHOR = {
   slug: "editorial-team",
-  name: "MangaReader Editorial",
-  bio: "The MangaReader editorial team has collectively read and catalogued thousands of series across shonen, seinen, shojo, josei, manhwa, and manhua. We write the guides, reviews, and explainers we wish existed when we started reading.",
+  name: "MangaRead Editorial",
+  bio: "The MangaRead editorial team has collectively read and catalogued thousands of series across shonen, seinen, shojo, josei, manhwa, and manhua. We write the guides, reviews, and explainers we wish existed when we started reading.",
   credentials:
     "Years of combined reading across every major demographic and format, with a focus on helping newcomers find their footing.",
-  socialLinks: { website: "https://mangareader.example" },
+  socialLinks: { website: "https://MangaRead.example" },
 };
 
 const CATEGORIES = [

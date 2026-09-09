@@ -2,7 +2,7 @@ import { buildMetadata } from "@/lib/seo";
 
 export const metadata = buildMetadata({
   title: "Cookie Policy",
-  description: "How MangaReader uses cookies to remember your preferences and keep you signed in.",
+  description: "How MangaRead uses cookies to remember your preferences and keep you signed in.",
   path: "/cookies",
 });
 

@@ -99,7 +99,7 @@ export default function Login() {
       </div>
       <footer className="footer">
         <div className="footer-bottom">
-          <span>© 2026 MangaReader.</span>
+          <span>© 2026 MangaRead.</span>
           <span>
             <Link href="/privacy">Privacy</Link> · <Link href="/terms">Terms</Link>
           </span>

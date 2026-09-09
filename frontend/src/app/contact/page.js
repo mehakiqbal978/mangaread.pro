@@ -47,7 +47,7 @@ export default function ContactPage() {
           Got a suggestion, a bug report, or a manga recommendation? I'm always listening!
         </p>
         <p style={{ marginBottom: "2rem", color: "var(--text2)" }}>
-          Because this platform is built by a fellow reader, your feedback directly shapes the future of MangaReader.pro. Whether a chapter failed to load, you have an idea for a new feature, or you just want to say hi, fill out the form below. I read every single message.
+          Because this platform is built by a fellow reader, your feedback directly shapes the future of mangaread.pro. Whether a chapter failed to load, you have an idea for a new feature, or you just want to say hi, fill out the form below. I read every single message.
         </p>
         <form onSubmit={submit} className="contact-form">
           <div className="form-group">

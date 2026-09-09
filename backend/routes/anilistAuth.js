@@ -30,7 +30,7 @@ function assertAniListConfig() {
 const ANILIST_HEADERS = {
   'Content-Type': 'application/json',
   Accept: 'application/json',
-  'User-Agent': `Mangareader.pro/${ANILIST_CLIENT_ID || '50507'} (+https://www.mangareader.pro)`,
+  'User-Agent': `mangaread.pro/${ANILIST_CLIENT_ID || '50507'} (+https://www.mangaread.pro)`,
   'Origin': 'https://anilist.co',
   'Referer': 'https://anilist.co/',
 };

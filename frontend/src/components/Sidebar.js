@@ -411,7 +411,7 @@ export default function Sidebar() {
 
         <div className="sb-footer">
           <div style={{ fontSize: "11px", color: "var(--text3)", marginBottom: "8px" }}>
-            © 2026 MangaReader. All rights reserved.
+            © 2026 MangaRead. All rights reserved.
           </div>
           {isLoggedIn && (
             <button

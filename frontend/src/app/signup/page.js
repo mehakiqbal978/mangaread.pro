@@ -162,7 +162,7 @@ export default function Signup() {
       </div>
       <footer className="footer">
         <div className="footer-bottom">
-          <span>© 2026 MangaReader.</span>
+          <span>© 2026 MangaRead.</span>
         </div>
       </footer>
     </div>

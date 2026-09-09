@@ -136,7 +136,7 @@ export default function MessageThreadPage({ params }) {
               }}
             >
               <div style={{ fontSize: 12, opacity: 0.7, marginBottom: 6 }}>
-                {r.sender === "admin" ? "MangaReader Support" : "You"} · {new Date(r.createdAt).toLocaleString()}
+                {r.sender === "admin" ? "MangaRead Support" : "You"} · {new Date(r.createdAt).toLocaleString()}
               </div>
               <div style={{ whiteSpace: "pre-wrap", lineHeight: 1.6 }}>{r.text}</div>
             </div>

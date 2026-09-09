@@ -4,7 +4,7 @@ import Image from "next/image";
 
 export const metadata = buildMetadata({
   title: "Support Us",
-  description: "Help keep MangaReader alive and thriving by supporting our server costs.",
+  description: "Help keep MangaRead alive and thriving by supporting our server costs.",
   path: "/support",
 });
 
@@ -14,12 +14,12 @@ export default function SupportPage() {
       <div className="legal-container">
         <LegalNav />
         <h1>Support The Project</h1>
-        <p className="legal-subtitle">Help keep MangaReader alive and thriving.</p>
+        <p className="legal-subtitle">Help keep MangaRead alive and thriving.</p>
         
         <section style={{ marginTop: "2rem" }}>
           <h2>Why We Need Your Help</h2>
           <p>
-            MangaReader was created by a fellow manga fan to solve the massive problem of spammy, ad-filled aggregator sites. Our goal is to give you a massive library and fast updates without forcing you to deal with malicious pop-ups or paywalls.
+            MangaRead was created by a fellow manga fan to solve the massive problem of spammy, ad-filled aggregator sites. Our goal is to give you a massive library and fast updates without forcing you to deal with malicious pop-ups or paywalls.
           </p>
           <p>
             However, maintaining a platform of this scale, paying for fast servers, and ensuring chapters load instantly requires significant financial investment. 

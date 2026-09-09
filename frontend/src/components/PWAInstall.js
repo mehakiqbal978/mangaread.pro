@@ -73,7 +73,7 @@ export default function PWAInstall() {
       </div>
       <div style={{ flex: 1 }}>
         <h4 style={{ margin: 0, fontSize: "1.1rem", color: "#fff", fontWeight: "bold" }}>Add to Home Screen</h4>
-        <p style={{ margin: "4px 0 0", fontSize: "0.85rem", color: "var(--text2)" }}>Install MangaReader for a faster, full-screen app experience.</p>
+        <p style={{ margin: "4px 0 0", fontSize: "0.85rem", color: "var(--text2)" }}>Install MangaRead for a faster, full-screen app experience.</p>
       </div>
       <div style={{ display: "flex", flexDirection: "column", gap: "8px", flexShrink: 0 }}>
         <button

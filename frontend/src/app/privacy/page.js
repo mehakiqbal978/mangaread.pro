@@ -3,7 +3,7 @@ import LegalNav from "@/components/LegalNav";
 
 export const metadata = buildMetadata({
   title: "Privacy Policy",
-  description: "Read how MangaReader.pro protects your data. A reader-first platform respecting your privacy.",
+  description: "Read how mangaread.pro protects your data. A reader-first platform respecting your privacy.",
   path: "/privacy",
 });
 
@@ -18,7 +18,7 @@ export default function PrivacyPage() {
         <section>
           <h2>1. A Reader-First Approach to Privacy</h2>
           <p>
-            Hi, I built MangaReader.pro because I love manhwa and manga, and I hate how modern websites harvest your data just to show you annoying pop-up ads. Because this platform is built by a reader for readers, your privacy is treated with the utmost respect. I only collect the absolute minimum data required to make features like reading history and bookmarks work.
+            Hi, I built mangaread.pro because I love manhwa and manga, and I hate how modern websites harvest your data just to show you annoying pop-up ads. Because this platform is built by a reader for readers, your privacy is treated with the utmost respect. I only collect the absolute minimum data required to make features like reading history and bookmarks work.
           </p>
         </section>
 
@@ -34,7 +34,7 @@ export default function PrivacyPage() {
         <section>
           <h2>3. Cookies and Tracking</h2>
           <p>
-            MangaReader uses strictly necessary cookies to keep you logged in. We also work with ad networks (like Monetag) to serve clean banner ads that pay for the server costs. These third-party networks may use cookies to serve non-intrusive ads. Unlike other platforms, we actively block malicious or pop-up ad networks.
+            MangaRead uses strictly necessary cookies to keep you logged in. We also work with ad networks (like Monetag) to serve clean banner ads that pay for the server costs. These third-party networks may use cookies to serve non-intrusive ads. Unlike other platforms, we actively block malicious or pop-up ad networks.
           </p>
         </section>
 

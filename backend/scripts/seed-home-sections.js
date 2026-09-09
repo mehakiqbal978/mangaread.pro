@@ -2,7 +2,7 @@
  * Seed homepage sections from AniList into the database.
  *
  * Usage:
- *   API_URL="https://api.mangareader.pro" DATABASE_URL="postgresql://..." node backend/scripts/seed-home-sections.js
+ *   API_URL="https://api.mangaread.pro" DATABASE_URL="postgresql://..." node backend/scripts/seed-home-sections.js
  */
 
 require('dotenv').config();

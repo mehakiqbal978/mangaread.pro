@@ -2,7 +2,7 @@
 # KV namespace is no longer required for caching.
 # Only add it back if you need persistent storage (user data, etc.)
 
-name               = "mangareader-proxy"
+name               = "MangaRead-proxy"
 main               = "worker.js"
 compatibility_date = "2024-01-15"
 workers_dev        = true
@@ -22,4 +22,4 @@ invocation_logs = true
 # routes = [{ pattern = "api.yourdomain.com/*", zone_name = "yourdomain.com" }]
 
 [env.production]
-name = "mangareader-proxy-prod"
+name = "MangaRead-proxy-prod"

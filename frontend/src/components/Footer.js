@@ -36,7 +36,7 @@ export default function Footer() {
         </div>
       </div>
       <div className="footer-bottom">
-        <span>© 2026 MangaReader.</span>
+        <span>© 2026 MangaRead.</span>
         <span className="footer-bottom-links">
           <Link href="/privacy">Privacy</Link>
           <Link href="/terms">Terms</Link>

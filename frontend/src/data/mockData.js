@@ -47,7 +47,7 @@ export const blogPosts = [
 ];
 
 export const faqs = [
-  { q: 'Is MangaReader free?', a: 'Yes, completely free. No ads, no paywalls. We are supported by voluntary donations from readers.' },
+  { q: 'Is MangaRead free?', a: 'Yes, completely free. No ads, no paywalls. We are supported by voluntary donations from readers.' },
   { q: 'Do I need an account to read?', a: 'No. You can read without an account. However, signing up lets you track progress, bookmark chapters, and sync across devices.' },
   { q: 'What is Incognito Mode?', a: 'When Incognito is active, nothing you read is saved to your history. It is session-only — close the app and everything is gone.' },
   { q: 'How do I enable NSFW content?', a: 'Go to Settings → Content → NSFW Content. You must confirm you are 18 or older. The toggle is off by default.' },

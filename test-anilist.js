@@ -27,7 +27,7 @@ async function testBackend() {
 
 async function testWorker() {
   console.log('[2] Cloudflare worker /api/anilist');
-  const workerUrl = 'https://mangareader-proxy-v2.mehakiqbal974.workers.dev';
+  const workerUrl = 'https://mangaread-proxy-v2.mehakiqbal974.workers.dev';
   try {
     const r = await axios.post(`${workerUrl}/api/anilist`, { query: QUERY, variables: { search: 'bleach' } }, { timeout: 20000 });
     if (r.status !== 200) return bad(`HTTP ${r.status}`);

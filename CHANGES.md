@@ -4,7 +4,7 @@ This is a direct patch of the audited repo — not a rewrite. Everything below
 was actually edited in the code (not just described). **None of this has been
 run against a live database or in a browser** (this environment has neither),
 so please smoke-test before deploying. Full findings/rationale are in
-`mangareader-code-review.md` from the earlier audit; this file is the
+`MangaRead-code-review.md` from the earlier audit; this file is the
 "what actually changed" summary.
 
 ## Security (backend)

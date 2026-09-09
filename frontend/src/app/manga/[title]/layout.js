@@ -29,7 +29,7 @@ function bookSchema(titleSlug) {
     isAccessibleForFree: "True",
     publisher: {
       "@type": "Organization",
-      name: "MangaReader",
+      name: "MangaRead",
       url: SITE_URL,
     },
   };

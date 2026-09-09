@@ -10,7 +10,7 @@ import { proxyImage } from "@/utils/api";
 export const metadata = buildMetadata({
   title: "The Reading Room — Manga Reviews, Guides & Editorials",
   description:
-    "In-depth manga reviews, beginner reading guides, curated recommendations, and editorials from the MangaReader team.",
+    "In-depth manga reviews, beginner reading guides, curated recommendations, and editorials from the MangaRead team.",
   path: "/blog",
 });
 
@@ -75,7 +75,7 @@ export default async function Blog({ searchParams }) {
       {/* BLOG HERO */}
       <div className="blog-hero">
         <h1>The Reading Room</h1>
-        <p>Essays, reviews, and deep dives from the MangaReader editorial team.</p>
+        <p>Essays, reviews, and deep dives from the MangaRead editorial team.</p>
       </div>
 
       <div className="blog-tabs" style={{ display: "flex", gap: "12px", padding: "0 20px", overflowX: "auto", marginBottom: "30px", maxWidth: "1200px", margin: "0 auto 30px" }}>

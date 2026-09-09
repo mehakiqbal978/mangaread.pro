@@ -2,7 +2,7 @@ const { PrismaClient } = require('@prisma/client');
 const prisma = new PrismaClient();
 
 async function main() {
-  const email = "admin@mangareader.pro";
+  const email = "admin@mangaread.pro";
   const updatedUser = await prisma.user.update({
     where: { email: email },
     data: { role: 'ADMIN' },

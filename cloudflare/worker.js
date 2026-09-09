@@ -246,7 +246,7 @@ async function mangadex(req, ctx) {
   return json(data, 200, { 'X-Cache': 'MISS', cf: { cacheEverything: true, cacheTtl: ttl } });
 }
 
-// ─── Generic scraper (Manganato, MangaKatana, MangaRead) ─────────────────────
+// ─── Generic scraper (Manganato, MangaKatana, MangaReader) ─────────────────────
 async function scraped(req, ctx, source, siteReferer) {
   const target = new URL(req.url).searchParams.get('url');
   if (!target) return json({ error: 'Missing ?url=' }, 400);

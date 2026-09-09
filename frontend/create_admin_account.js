@@ -2,7 +2,7 @@ fetch("http://localhost:3000/api/auth/register", {
   method: "POST",
   headers: { "Content-Type": "application/json" },
   body: JSON.stringify({
-    email: "admin@mangareader.pro",
+    email: "admin@mangaread.pro",
     password: "adminpassword123!",
     displayName: "Super Admin"
   })

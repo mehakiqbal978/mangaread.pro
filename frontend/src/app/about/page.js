@@ -5,7 +5,7 @@ import LegalNav from "@/components/LegalNav";
 
 export const metadata = buildMetadata({
   title: "About Us",
-  description: "Learn about MangaReader.pro — built by a manga fan to provide an ad-free, massive library with a clean reading experience.",
+  description: "Learn about mangaread.pro — built by a manga fan to provide an ad-free, massive library with a clean reading experience.",
   path: "/about",
 });
 
@@ -14,11 +14,11 @@ export default function AboutPage() {
     <div className="legal-page">
       <div className="legal-container">
         <LegalNav />
-        <h1>About MangaReader.pro</h1>
+        <h1>About mangaread.pro</h1>
         <p className="legal-subtitle">Built by a reader, for the readers.</p>
         
         <section style={{ marginTop: "2rem" }}>
-          <h2>The Story Behind MangaReader</h2>
+          <h2>The Story Behind MangaRead</h2>
           <p>
             Hi there! I am a massive fan of manhwa, manhua, and webcomics. Like many of you, I spend hours immersed in incredible worlds, leveling systems, and deep storylines. But over the years, I started facing some major frustrations with the platforms available.
           </p>
@@ -58,7 +58,7 @@ export default function AboutPage() {
         <section style={{ marginTop: "2rem", padding: "1.5rem", background: "rgba(234, 179, 8, 0.1)", border: "1px solid rgba(234, 179, 8, 0.3)", borderRadius: "12px" }}>
           <h2 style={{ borderBottom: "none", paddingBottom: 0, marginTop: 0, color: "#eab308" }}>Important: We Are Not Affiliated With Other Sites</h2>
           <p>
-            <strong>MangaReader.pro</strong> is an independent project. We are <strong>not affiliated with, endorsed by, or connected to</strong> any other manga reading websites, including but not limited to <strong>MangaReader.to</strong>, MangaDex, MangaKatana, or any similarly named platforms.
+            <strong>mangaread.pro</strong> is an independent project. We are <strong>not affiliated with, endorsed by, or connected to</strong> any other manga reading websites, including but not limited to <strong>MangaRead.to</strong>, MangaDex, MangaKatana, or any similarly named platforms.
           </p>
           <p>
             If you see similar domain names or branding, those are separate entities. We maintain our own infrastructure, content aggregation, and reading experience.

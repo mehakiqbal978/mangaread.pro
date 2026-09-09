@@ -140,13 +140,13 @@ export default function Settings() {
           {activePanel === "appearance" && (
             <div className="s-panel active">
               <div className="s-panel-title">Appearance</div>
-              <div className="s-panel-sub">Customise how MangaReader looks.</div>
+              <div className="s-panel-sub">Customise how MangaRead looks.</div>
               
               {!isStandalone && (
                 <div className="setting-row">
                   <div className="s-label">
                     <h4>Install App</h4>
-                    <p>Add MangaReader to your home screen</p>
+                    <p>Add MangaRead to your home screen</p>
                   </div>
                   <button
                     onClick={handleInstallClick}

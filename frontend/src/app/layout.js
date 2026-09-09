@@ -48,8 +48,8 @@ try {
 export const metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "Free Manga Reader Online — Read Manga, Manhwa & Manhua",
-    template: "%s | Free Manga Reader",
+    default: "Free MangaRead Online — Read Manga, Manhwa & Manhua",
+    template: "%s | Free MangaRead",
   },
   description: DEFAULT_DESCRIPTION,
   applicationName: SITE_NAME,
@@ -109,9 +109,6 @@ export default async function RootLayout({ children }) {
         <link rel="alternate" hrefLang="ko" href={SITE_URL + "/"} />
         <link rel="alternate" hrefLang="zh" href={SITE_URL + "/"} />
         <link rel="alternate" hrefLang="x-default" href={SITE_URL + "/"} />
-        <meta name="6a97888e-site-verification" content="96070b758f3aa1bd8cc49f6ef180d595" />
-        <meta name="7A3B9K2" content="7A3B9K2" />
-        <meta name="yandex-verification" content="c8df678ff951f19e" />
         <meta name="admaven-placement" content="BpdY8rjsF" />
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-39V70HQCY8"></script>
         <script
@@ -124,7 +121,6 @@ export default async function RootLayout({ children }) {
             `,
           }}
         />
-        <script data-cfasync="false" src="//dcbbwymp1bhlf.cloudfront.net/?wbbcd=1717839"></script>
         {adMavenScript && <script dangerouslySetInnerHTML={{ __html: adMavenScript }} />}
       </head>
       <body className={`${dmSans.className} dark bg-bg`} suppressHydrationWarning>

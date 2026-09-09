@@ -1,6 +1,6 @@
 # Multi-Domain Deployment & Setup Guide
 
-This guide outlines how to run multiple independent websites (e.g. `mangareader.pro`, `mangaread.pro`, `manireader.online`) using **a single Git codebase**.
+This guide outlines how to run multiple independent websites (e.g. `mangaread.pro`, `mangaread.pro`, `manireader.online`) using **a single Git codebase**.
 
 By using an **Environment-driven Deployment Strategy**, you maintain 1 GitHub repository while deploying separate frontend and backend instances with isolated databases, proxies, ad scripts, and search console metadata.
 
@@ -9,7 +9,7 @@ By using an **Environment-driven Deployment Strategy**, you maintain 1 GitHub re
 ## Strategy Overview
 
 ```
-                        ┌─── Frontend 1 (mangareader.pro)  ──► Backend 1 ──► DB 1 + Proxy 1
+                        ┌─── Frontend 1 (mangaread.pro)  ──► Backend 1 ──► DB 1 + Proxy 1
                         │
 [1 Single Git Repo] ────┼─── Frontend 2 (mangaread.pro)   ──► Backend 2 ──► DB 2 + Proxy 2
                         │
@@ -21,7 +21,7 @@ By using an **Environment-driven Deployment Strategy**, you maintain 1 GitHub re
 ## Step 1: Database Provisioning
 
 Create 3 separate PostgreSQL databases (e.g., on Neon Tech, Supabase, or Railway):
-1. **Database 1**: `postgresql://.../mangareader_db`
+1. **Database 1**: `postgresql://.../MangaRead_db`
 2. **Database 2**: `postgresql://.../mangaread_db`
 3. **Database 3**: `postgresql://.../manireader_db`
 
@@ -37,10 +37,10 @@ npx prisma db push
 
 On Railway (or Render/VPS), create **3 separate backend services** connected to the same GitHub repo's `/backend` directory.
 
-### **Backend 1 (`api.mangareader.pro`)**
+### **Backend 1 (`api.mangaread.pro`)**
 - `PORT`: `3001`
 - `DATABASE_URL`: Database 1 URL
-- `ALLOWED_ORIGINS`: `https://mangareader.pro,https://www.mangareader.pro`
+- `ALLOWED_ORIGINS`: `https://mangaread.pro,https://www.mangaread.pro`
 - `SCRAPER_PROXY_URL`: `http://user:pass@proxy1.com:port`
 - `ANILIST_HTTP_PROXY`: `http://user:pass@proxy1.com:port`
 
@@ -83,12 +83,12 @@ Support dynamic configuration for Search Console verification and ad script tags
 
 On Vercel (or Railway), create **3 separate frontend projects** pointing to the `/frontend` directory of your repository.
 
-### **Frontend 1 (`mangareader.pro`)**
-- `NEXT_PUBLIC_SITE_NAME`: `MangaReader`
-- `NEXT_PUBLIC_SITE_URL`: `https://mangareader.pro`
-- `NEXT_PUBLIC_API_URL`: `https://api.mangareader.pro`
+### **Frontend 1 (`mangaread.pro`)**
+- `NEXT_PUBLIC_SITE_NAME`: `MangaRead`
+- `NEXT_PUBLIC_SITE_URL`: `https://mangaread.pro`
+- `NEXT_PUBLIC_API_URL`: `https://api.mangaread.pro`
 - `DATABASE_URL`: Database 1 URL
-- `NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION`: `gsc-key-for-mangareader`
+- `NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION`: `gsc-key-for-MangaRead`
 
 ### **Frontend 2 (`mangaread.pro`)**
 - `NEXT_PUBLIC_SITE_NAME`: `MangaRead`
@@ -108,7 +108,7 @@ On Vercel (or Railway), create **3 separate frontend projects** pointing to the 
 
 ## Step 5: Summary Matrix
 
-| Component | Site 1 (`mangareader.pro`) | Site 2 (`mangaread.pro`) | Site 3 (`manireader.online`) |
+| Component | Site 1 (`mangaread.pro`) | Site 2 (`mangaread.pro`) | Site 3 (`manireader.online`) |
 | :--- | :--- | :--- | :--- |
 | **Frontend** | Vercel Project 1 | Vercel Project 2 | Vercel Project 3 |
 | **Backend** | Railway Service 1 | Railway Service 2 | Railway Service 3 |

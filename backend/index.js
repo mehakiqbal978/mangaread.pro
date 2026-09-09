@@ -76,7 +76,7 @@ app.use((req, res, next) => {
 // ALLOWED_ORIGINS supports exact origins and wildcard subdomains:
 //   ALLOWED_ORIGINS="https://app.example.com,https://*.example.com"
 // The wildcard entry allows any subdomain of example.com (including apex).
-const ALLOWED_ORIGINS = (process.env.ALLOWED_ORIGINS || 'http://localhost:3000,https://www.mangareader.pro,https://mangareader.pro,https://*.mangareader.pro')
+const ALLOWED_ORIGINS = (process.env.ALLOWED_ORIGINS || 'http://localhost:3000,https://www.mangaread.pro,https://mangaread.pro,https://*.mangaread.pro')
   .replace(/^"|"$/g, '')
   .split(',').map(s => s.trim().replace(/^"|"$/g, ''));
 const ALLOWED_ORIGIN_PATTERNS = ALLOWED_ORIGINS.map(o => {
@@ -102,7 +102,7 @@ app.use((req, res, next) => {
     if (isOriginAllowed(origin)) {
       res.setHeader('Access-Control-Allow-Origin', origin);
       res.setHeader('Access-Control-Allow-Credentials', 'true');
-    } else if (origin.endsWith('.mangareader.pro') || origin === 'https://mangareader.pro') {
+    } else if (origin.endsWith('.mangaread.pro') || origin === 'https://mangaread.pro') {
       res.setHeader('Access-Control-Allow-Origin', origin);
       res.setHeader('Access-Control-Allow-Credentials', 'true');
     }
@@ -1297,7 +1297,7 @@ app.put('/api/admin/messages/:id/resolve', requireAdmin, async (req, res) => {
 app.get('/api/sitemap/blog', async (req, res) => {
   try {
     const posts = (await db.query("SELECT slug,updated_at,published_at FROM blog_posts WHERE status='published' ORDER BY published_at DESC")).rows;
-    const base = process.env.SITE_URL || 'https://mangareader.app';
+    const base = process.env.SITE_URL || 'https://mangaread.pro';
     const xml = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${posts.map(p => `  <url>\n    <loc>${base}/blog/${p.slug}</loc>\n    <lastmod>${(p.updated_at || p.published_at || new Date()).toISOString().split('T')[0]}</lastmod>\n    <changefreq>monthly</changefreq>\n    <priority>0.7</priority>\n  </url>`).join('\n')}\n</urlset>`;
     res.setHeader('Content-Type', 'application/xml');
     res.setHeader('Cache-Control', 'public, max-age=3600');

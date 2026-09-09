@@ -5,7 +5,7 @@ import AdminNav from "@/components/admin/AdminNav";
 import "./admin.css";
 
 export const metadata = {
-  title: "Admin Â· MangaReader",
+  title: "Admin Â· MangaRead",
   // Admin is never for search engines.
   robots: { index: false, follow: false },
 };

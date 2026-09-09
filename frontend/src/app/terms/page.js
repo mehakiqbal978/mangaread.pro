@@ -3,7 +3,7 @@ import LegalNav from "@/components/LegalNav";
 
 export const metadata = buildMetadata({
   title: "Terms of Service",
-  description: "Terms and conditions for using MangaReader.pro. Please read carefully.",
+  description: "Terms and conditions for using mangaread.pro. Please read carefully.",
   path: "/terms",
 });
 
@@ -18,17 +18,17 @@ export default function TermsPage() {
         <section>
           <h2>1. Introduction</h2>
           <p>
-            Welcome to MangaReader.pro. By accessing or using our platform, you agree to be bound by these Terms of Service. This platform was created by a fellow manga/manhwa reader to solve common problems like intrusive ads and poor library management, providing a cleaner, faster reading experience.
+            Welcome to mangaread.pro. By accessing or using our platform, you agree to be bound by these Terms of Service. This platform was created by a fellow manga/manhwa reader to solve common problems like intrusive ads and poor library management, providing a cleaner, faster reading experience.
           </p>
         </section>
 
         <section>
           <h2>2. Data Ownership & Disclaimer</h2>
           <p>
-            <strong>We do not claim ownership of the comic data on this site.</strong> MangaReader.pro acts strictly as an aggregator and indexing service. All manga, manhwa, manhua, images, characters, and storylines belong entirely to their respective authors, artists, publishers, and translation groups. We do not host the image files on our own servers; we merely provide a specialized browser to view content publicly available on the internet. 
+            <strong>We do not claim ownership of the comic data on this site.</strong> mangaread.pro acts strictly as an aggregator and indexing service. All manga, manhwa, manhua, images, characters, and storylines belong entirely to their respective authors, artists, publishers, and translation groups. We do not host the image files on our own servers; we merely provide a specialized browser to view content publicly available on the internet. 
           </p>
           <p>
-            The only content claimed as original property by MangaReader.pro are the editorial articles and blogs posted by our admin team.
+            The only content claimed as original property by mangaread.pro are the editorial articles and blogs posted by our admin team.
           </p>
         </section>
 
@@ -49,7 +49,7 @@ export default function TermsPage() {
         <section>
           <h2>5. Limitation of Liability</h2>
           <p>
-            MangaReader.pro is provided "as is" without warranties of any kind. We cannot guarantee that third-party image servers will always be online, nor can we guarantee uninterrupted access to specific chapters, as we do not control the source files. 
+            mangaread.pro is provided "as is" without warranties of any kind. We cannot guarantee that third-party image servers will always be online, nor can we guarantee uninterrupted access to specific chapters, as we do not control the source files. 
           </p>
         </section>
 

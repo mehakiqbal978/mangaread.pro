@@ -46,7 +46,7 @@ export async function generateMetadata({ params }) {
   return buildMetadata({
     title: article.seoTitle || article.title,
     description:
-      article.seoDescription || article.excerpt || `${article.title} — MangaReader editorial.`,
+      article.seoDescription || article.excerpt || `${article.title} — MangaRead editorial.`,
     path: `/blog/${article.slug}`,
     type: "article",
     image: article.ogImage
