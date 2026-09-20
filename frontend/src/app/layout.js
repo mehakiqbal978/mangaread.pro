@@ -5,6 +5,8 @@ import { AppProvider } from "@/context/AppContext";
 import { Toaster } from "react-hot-toast";
 import Header from "@/components/Header";
 import JsonLd from "@/components/JsonLd";
+import AadsBanner from "@/components/AadsBanner";
+import PopAdsWrapper from "@/components/PopAdsWrapper";
 import MaintenanceGuard from "@/components/MaintenanceGuard";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
@@ -27,30 +29,7 @@ const LibraryPicker = dynamic(() => import("@/components/LibraryPicker"));
 const DEFAULT_DESCRIPTION =
   "Read manga, manhwa, and manhua free. Sync reading across devices, bookmark chapters, track progress, and discover new series.";
 
-let adMavenScript = "";
-let adMavenExternalScripts = "";
-try {
-  const fs = require("fs");
-  const path = require("path");
-  const adMavenPath = path.join(process.cwd(), "public", "ad-maven.js");
-  const adMavenContent = fs.readFileSync(adMavenPath, "utf8");
-  const matches = [...adMavenContent.matchAll(/<script[^>]*>([\s\S]*?)<\/script>/gi)];
-  if (matches.length) {
-    const inlineScripts = matches
-      .filter((m) => !m[0].includes("src="))
-      .map((m) => m[1].trim())
-      .filter(Boolean);
-    adMavenScript = inlineScripts.join("\n");
 
-    const externalScripts = matches
-      .filter((m) => m[0].includes("src="))
-      .map((m) => m[0].trim())
-      .filter(Boolean);
-    adMavenExternalScripts = externalScripts.join("\n");
-  }
-} catch (e) {
-  console.error("Failed to load ad-maven:", e);
-}
 
 export const metadata = {
   metadataBase: new URL(SITE_URL),
@@ -116,7 +95,6 @@ export default async function RootLayout({ children }) {
         <link rel="alternate" hrefLang="ko" href={SITE_URL + "/"} />
         <link rel="alternate" hrefLang="zh" href={SITE_URL + "/"} />
         <link rel="alternate" hrefLang="x-default" href={SITE_URL + "/"} />
-        <meta name="admaven-placement" content="BpdY8rjsF" />
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-39V70HQCY8"></script>
         <script
           dangerouslySetInnerHTML={{
@@ -128,14 +106,7 @@ export default async function RootLayout({ children }) {
             `,
           }}
         />
-        {adMavenScript && <script dangerouslySetInnerHTML={{ __html: adMavenScript }} />}
-        {adMavenExternalScripts && (
-          <script
-            async
-            data-cfasync="false"
-            src="//dcbbwymp1bhlf.cloudfront.net/?wbbcd=1717839"
-          />
-        )}
+        <PopAdsWrapper />
       </head>
       <body className={`${dmSans.className} dark bg-bg`} suppressHydrationWarning>
         <JsonLd data={organizationSchema()} />
@@ -157,6 +128,7 @@ export default async function RootLayout({ children }) {
         <AppProvider>
           <MaintenanceGuard>
 <div id="app">
+              <AadsBanner />
               <InkDots />
               <Header />
               <Sidebar />
