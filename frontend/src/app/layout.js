@@ -95,6 +95,7 @@ export default async function RootLayout({ children }) {
         <link rel="alternate" hrefLang="ko" href={SITE_URL + "/"} />
         <link rel="alternate" hrefLang="zh" href={SITE_URL + "/"} />
         <link rel="alternate" hrefLang="x-default" href={SITE_URL + "/"} />
+        <meta name="monetag" content="f69c8d40df9b26a9caa187095e743972" />
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-39V70HQCY8"></script>
         <script
           dangerouslySetInnerHTML={{
